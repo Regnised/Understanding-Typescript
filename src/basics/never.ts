@@ -1,22 +1,19 @@
-let userInput: unknown;
-let userName: string;
+{
+  let userInput: unknown;
+  let userName: string;
 
-userName = 'Name';
+  userName = 'Name';
 
-userInput = 5;
-userInput = 'TEST';
+  userInput = 5;
+  userInput = 'TEST';
 
-if (typeof userInput === 'string') {
+  if (typeof userInput === 'string') {
     userName = userInput;
+  }
+
+  function genError(message: string, code: number): never {
+    throw { message, errorCode: code };
+  }
+
+  genError('Hey from Error!', 500);
 }
-
-function genError(message: string, code: number): never {
-    throw {message, errorCode: code};
-}
-
-const res = genError('Hey from Error!', 500);
-
-
-
-
-
